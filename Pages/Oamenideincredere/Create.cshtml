@@ -1,0 +1,54 @@
+﻿@page
+@model Geo.Pages.Oamenideincredere.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Whocansee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Whocansee.FirstName" class="control-label"></label>
+                <input asp-for="Whocansee.FirstName" class="form-control" />
+                <span asp-validation-for="Whocansee.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Whocansee.LastName" class="control-label"></label>
+                <input asp-for="Whocansee.LastName" class="form-control" />
+                <span asp-validation-for="Whocansee.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Whocansee.Adress" class="control-label"></label>
+                <input asp-for="Whocansee.Adress" class="form-control" />
+                <span asp-validation-for="Whocansee.Adress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Whocansee.Email" class="control-label"></label>
+                <input asp-for="Whocansee.Email" class="form-control" />
+                <span asp-validation-for="Whocansee.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Whocansee.Phone" class="control-label"></label>
+                <input asp-for="Whocansee.Phone" class="form-control" />
+                <span asp-validation-for="Whocansee.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

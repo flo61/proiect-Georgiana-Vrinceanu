@@ -1,0 +1,79 @@
+﻿@page
+@model Geo.Pages.Lists.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Todolist</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Todolist.ID" />
+            <div class="form-group">
+                <label asp-for="Todolist.Movies" class="control-label"></label>
+                <input asp-for="Todolist.Movies" class="form-control" />
+                <span asp-validation-for="Todolist.Movies" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Todolist.Countries" class="control-label"></label>
+                <input asp-for="Todolist.Countries" class="form-control" />
+                <span asp-validation-for="Todolist.Countries" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Todolist.Rude" class="control-label"></label>
+                <input asp-for="Todolist.Rude" class="form-control" />
+                <span asp-validation-for="Todolist.Rude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Todolist.Goals" class="control-label"></label>
+                <input asp-for="Todolist.Goals" class="form-control" />
+                <span asp-validation-for="Todolist.Goals" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Todolist.Thedate" class="control-label"></label>
+                <input asp-for="Todolist.Thedate" class="form-control" />
+                <span asp-validation-for="Todolist.Thedate" class="textdanger"></span>
+                </div>
+            <div class="form-group">
+                <label asp-for="Todolist.Countriestovisit" class="control-label">Country Name</label>
+                <select asp-for="Todolist.Countriestovisit" class="form-control" asp-items="ViewBag.CountriestovisitID">
+                </select>
+                <span asp-validation-for="Todolist.Countriestovisit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Todolist.Obiective" class="control-label">Obiectivul Meu</label>
+                <select asp-for="Todolist.Obiective" class="form-control" asp-items="ViewBag.ObiectiveID">
+                </select>
+                <span asp-validation-for="Todolist.Obiective" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Todolist.Carte" class="control-label">Denumire Carte</label>
+                <select asp-for="Todolist.Carte" class="form-control" asp-items="ViewBag.CarteID">
+                </select>
+                <span asp-validation-for="Todolist.Carte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Todolist.Materie" class="control-label">Materii pe care sa le iau</label>
+                <select asp-for="Todolist.Materie" class="form-control" asp-items="ViewBag.MaterieID">
+                </select>
+                <span asp-validation-for="Todolist.Materie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

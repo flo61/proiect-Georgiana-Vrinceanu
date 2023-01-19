@@ -1,0 +1,86 @@
+﻿@page
+@model Geo.Pages.Lists.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Todolist[0].Movies)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Todolist[0].Countries)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Todolist[0].Rude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Todolist[0].Goals)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Todolist[0].Thedate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Todolist[0].Countriestovisit.CountryName)
+ </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Todolist[0].Obiective.ObiectivulMeu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Todolist[0].Carte.DenumireCarte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Todolist[0].Materie.Materiipecaresaleiau)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Todolist) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movies)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Countries)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Goals)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Thedate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Countriestovisit.CountryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Obiective.ObiectivulMeu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Carte.DenumireCarte)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Materie.Materiipecaresaleiau)
+                </td>
+
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

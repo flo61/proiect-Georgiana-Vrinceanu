@@ -1,0 +1,45 @@
+﻿@page
+@model Geo.Pages.Trust.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Incredere</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Incredere.ID" />
+            <div class="form-group">
+                <label asp-for="Incredere.WhocanseeID" class="control-label"></label>
+                <select asp-for="Incredere.WhocanseeID" class="form-control" asp-items="ViewBag.WhocanseeID"></select>
+                <span asp-validation-for="Incredere.WhocanseeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Incredere.TodolistID" class="control-label"></label>
+                <select asp-for="Incredere.TodolistID" class="form-control" asp-items="ViewBag.TodolistID"></select>
+                <span asp-validation-for="Incredere.TodolistID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Incredere.ReturnDate" class="control-label"></label>
+                <input asp-for="Incredere.ReturnDate" class="form-control" />
+                <span asp-validation-for="Incredere.ReturnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
